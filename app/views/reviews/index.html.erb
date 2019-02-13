@@ -17,10 +17,10 @@
       <tr>
         <td><%= review.content %></td>
         <td><%= review.rating %></td>
-        <td><%= review.restaurant %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= review.restaurant.name %></td>
+        <td><%= link_to 'Show', restaurant_review_path(review, restaurant_id: @restaurant.id) %></td>
+        <td><%= link_to 'Edit', edit_restaurant_review_path(review, restaurant_id: @restaurant.id) %></td>
+        <td><%= link_to 'Destroy', restaurant_review_path(review, restaurant_id: @restaurant.id, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Review', new_review_path %>
+<%= link_to 'New Review', new_restaurant_review_path(restaurant_id: @restaurant.id) %>

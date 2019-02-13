@@ -12,8 +12,8 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @review.restaurant %>
+  <%= @review.restaurant.name %>
 </p>
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', restaurants_reviews_path %>
+<%= link_to 'Edit', edit_restaurant_review_path(@review) %> |
+<%= link_to 'Back', restaurant_reviews_path(@restaurant) %>

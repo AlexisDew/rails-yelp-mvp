@@ -4,12 +4,14 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reviews = Review.where(restaurant: @restaurant)
   end
 
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   # GET /reviews/new
@@ -20,6 +22,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   # POST /reviews
